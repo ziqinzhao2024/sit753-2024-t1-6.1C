@@ -25,6 +25,13 @@ pipeline {
                     body: "Build was successful",
                     attachLog:true
                 }
+
+                failure {
+                    emailext to: "zhao1289531117@126.com",
+                    subject: "Build Status Email",
+                    body: "Build was fail",
+                    attachLog:true
+                }
             }
 
 
@@ -44,7 +51,23 @@ pipeline {
                     // Perform security scan use a tool like OWASP ZAP
                     echo 'Performing security scan use OWASP ZAP'
             }
+
+            post {
+                success {
+                    emailext to: "zhao1289531117@126.com",
+                    subject: " Build Status Email",
+                    body: "Build was successful",
+                    attachLog:true
+                }
+                failure {
+                    emailext to: "zhao1289531117@126.com",
+                    subject: "Build Status Email",
+                    body: "Build was fail",
+                    attachLog:true
+                }
         }
+        
+    }
 
         stage('Deploy to staging') {
             steps {
