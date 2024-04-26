@@ -22,7 +22,7 @@ pipeline {
                 success {
                     mail to: "zhao1289531117@126.com",
                     subject: " Build Status Email",
-                    body: "Build was successful",
+                    body: "Build was successful"
                     //attachLog:true
                 }
             }
