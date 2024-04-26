@@ -16,7 +16,7 @@ pipeline {
                     //use test automation tools like Junit for unit tests and Selenium for integration tests
                     echo 'run unit tests use Junit'
                     echo 'run integration tests use Selenium'
-                    echo 'text'
+                    echo 'text1'
             }
 
             post {
